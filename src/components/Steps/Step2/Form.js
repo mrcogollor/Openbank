@@ -13,6 +13,8 @@ const PREV_STEP = '1';
 const Form = () => {
   const { t } = useTranslation('translations');
 
+  const MAX_LENGTH_REASON = 60;
+
   const defaultState = {
     password: '',
     repeatPass: '',
@@ -29,6 +31,10 @@ const Form = () => {
     let value = e.target.value;
 
     setState({ ...state, [name]: value });
+
+    if (name === 'clueText') {
+      _setCharsClueInput(value.length);
+    }
   };
 
   const [showPassword, _setShowPassword] = useState(false);
@@ -40,23 +46,28 @@ const Form = () => {
   const [errorLengthPass, _setErrorLengthPass] = useState(true);
   const [isNotValidPass, _setIsNotValidPass] = useState(true);
   const [hasEqualPassword, _setHasEqualPassword] = useState(true);
+  const [errorLengthClue, _setErrorLengthClue] = useState(true);
+
+  const [charsClueInput, _setCharsClueInput] = useState(0);
 
   useEffect(() => {
-    let isValidPasswordLength, hasValidFormat, equalPassword;
+    let isValidPasswordLength, hasValidFormat, equalPassword, clueTextLong;
     isValidPasswordLength = state.password.length < 8 || state.password.length > 24;
     _setErrorLengthPass(isValidPasswordLength);
     hasValidFormat = !validatePassword(state.password);
     _setIsNotValidPass(hasValidFormat);
     equalPassword = state.password !== state.repeatPass;
     _setHasEqualPassword(equalPassword);
-  }, [state.password, state.repeatPass]);
+    clueTextLong = state.clueText.length > MAX_LENGTH_REASON;
+    _setErrorLengthClue(clueTextLong);
+  }, [state.password, state.repeatPass, state.clueText]);
 
   return (
     <Step
       data={{ ...state }}
       prevStep={PREV_STEP}
       lastStep={true}
-      nextDisabled={errorLengthPass || isNotValidPass || hasEqualPassword}
+      nextDisabled={errorLengthPass || isNotValidPass || hasEqualPassword || errorLengthClue}
     >
       <div className="steps step-form">
         <p dangerouslySetInnerHTML={{ __html: t('steps.step2.title') }}></p>
@@ -123,6 +134,10 @@ const Form = () => {
             onChange={updateStepData}
             placeholder={t('steps.step2.cluePlacehoder')}
           />
+          {errorLengthClue && <span className="step-form__input-error">{t('steps.formErrors.errorLengthClue')}</span>}
+          <span className="step-form__counter">
+            {t('steps.step2.counter', { current: charsClueInput, max: MAX_LENGTH_REASON })}
+          </span>
         </div>
       </div>
     </Step>

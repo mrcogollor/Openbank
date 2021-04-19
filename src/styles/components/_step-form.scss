@@ -39,9 +39,16 @@
 
   &__clue-password {
     margin-top: rem(16);
+    display: flex;
+    flex-direction: column;
   }
   &__input-error {
     margin-top: rem(8);
     color: $c-primary-color;
+  }
+  &__counter {
+    margin-top: rem(6);
+    margin-left: auto;
+    color: $c-step-inactive;
   }
 }

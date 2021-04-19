@@ -35,7 +35,8 @@
       "passwordShowLabel": "Mostrar password campo password",
       "passwordHideLabel": "Ocultar password campo password",
       "passwordRepeatShowLabel": "Mostrar password campo repetir password",
-      "passwordRepeatHideLabel": "Ocultar password campo repetir password"
+      "passwordRepeatHideLabel": "Ocultar password campo repetir password",
+      "counter": "{{ current }} / {{ max }}"
     },
     "step3": {
       "titleSuccess": "¡Tu Password Manager ya está creado!",
@@ -49,7 +50,8 @@
       "isRequired": "El campo es obligatorio",
       "invalidLength": "El campo debe tener un mínimo de 8 caracteres y máximo de 24",
       "passwordIsWeak": "La contraseña necesita incluir al menos 1 número y una mayúscula",
-      "passwordIsDifferent": "Las contraseñas deben coincidir"
+      "passwordIsDifferent": "Las contraseñas deben coincidir",
+      "errorLengthClue": "El texto de tu pista no puede exceder de 60 caractéres"
     }
   },
   "error": {
