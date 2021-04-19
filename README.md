@@ -39,6 +39,4 @@ You will also see any lint errors in the console.
 
 To run linters ESLint and StyleLint 
 
-### `npm start`
-
 <p style="text-align: center;"> Made by <a href="https://github.com/mrcogollor">Rubén Cogollor</a></p>
