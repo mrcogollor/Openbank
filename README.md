@@ -10,7 +10,7 @@ Code challenge made in react and bootstrapped with [Create React App](https://gi
 
 The file structure is based in componentes and pages that render differents views connected to each route.
 
-[React Material] (https://material-ui.com/components/steppers/) was used to perform a Stepper, with three different <Step> component.
+[React Material](https://material-ui.com/components/steppers)was used to perform a Stepper, with three different <Step> component.
 
 [BONUS]: A error component was develop to redirect to error pages (routes not defined)
 [BONUS]: Clue input text has a counter caracter
