@@ -1,0 +1,30 @@
+input[type='checkbox'] + span {
+  color: $c-secondary-color;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  @include breakpoint(tablet) {
+    align-items: center;
+  }
+}
+
+input[type='checkbox'] + span:before {
+  content: '';
+  display: inline-flex;
+  width: rem(20);
+  height: rem(20);
+  flex: 0 0 rem(20);
+  background: $c-white;
+  margin-right: rem(8);
+  border: 1px solid $c-secondary-color;
+  vertical-align: middle;
+}
+
+input[type='checkbox']:checked + span:before {
+  content: '\2713';
+  font-size: rem(20);
+  text-align: center;
+  color: $c-white;
+  border-color: $c-primary-color;
+  background: $c-primary-color;
+}

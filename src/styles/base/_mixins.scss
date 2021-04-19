@@ -1,0 +1,98 @@
+// Responsive media queries
+// use:
+//  .element {
+//    @include breakpoint(mobile|tablet|desktop|desktop-large){
+//      ...
+//    }
+//   }
+@mixin breakpoint($breakpoint) {
+  @if $breakpoint == '' {
+    @content;
+  } @else {
+    // Retrieves the value from the key
+    $value: map-get($breakpoints, $breakpoint);
+
+    // If the key exists in the map
+    @if $value != null {
+      // Prints a media query based on the value
+      @media (min-width: $value) {
+        @content;
+      }
+    }
+
+    // If the key doesn't exist in the map
+    @else {
+      @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+    }
+  }
+}
+
+// REM conversor
+// use:
+//  .element {
+//    height: rem(50);
+//   }
+@function rem($size) {
+  @return #{$size / $f-base}rem;
+}
+
+// Grid width calculator
+// use:
+//  .element {
+//    width: flex-grid(1, 12);
+//   }
+@function flex-grid($columns, $container-columns: $g-max-columns, $gutter-width: $g-gutter) {
+  $width: $columns * $g-column + ($columns - 1) * $gutter-width;
+  $container-width: $container-columns * $g-column + ($container-columns - 1) * $gutter-width;
+  @return percentage($width / $container-width);
+}
+
+// Grid margin & padding calculator. Same as above but with extra gutter
+// use:
+//  .element {
+//    width: spacing-grid(1, 12);
+//   }
+@function spacing-grid($columns, $container-columns: $g-max-columns, $gutter-width: $g-gutter) {
+  $width: $columns * $g-column + $columns * $gutter-width;
+  $container-width: $container-columns * $g-column + ($container-columns - 1) * $gutter-width;
+  @return percentage($width / $container-width);
+}
+
+@mixin icon-styles() {
+  font-family: '#{$icomoon-font-family}' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  font-size: 1rem;
+  line-height: 1;
+  display: inline-block;
+  // Better Font Rendering =========== //
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Mixin for adding icons to element without need of adding classes
+// use:
+// .element{
+//   @include icon($icon-arrow-right) {
+//      ...custom styles...
+//   }
+// }
+
+@mixin icon($icon: false, $position: before, $styles: true) {
+  // Either a :before or :after pseudo-element, default to :after
+  &::#{$position} {
+    @if $icon {
+      content: '#{$icon}';
+    }
+    @if $styles {
+      @include icon-styles();
+    }
+    // Include any extra rules supplied for the pseudo-element
+    @content;
+  }
+}

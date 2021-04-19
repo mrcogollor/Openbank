@@ -1,0 +1,43 @@
+.step-buttons {
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: rem(32) rem(16);
+    border-top: 1px solid $c-step-buttons-border;
+    margin-left: rem(-16);
+    margin-right: rem(-16);
+    @include breakpoint(tablet) {
+      padding: rem(32) rem(64);
+      border-bottom: 1px solid $c-step-buttons-border;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  &--bottom {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__prev {
+    background: 0;
+    color: $c-secondary-color;
+    padding: 0;
+    &:before {
+      content: '\2039';
+      font-size: rem(22);
+      line-height: rem(16);
+      padding-right: rem(6);
+    }
+  }
+
+  &__next {
+    &:after {
+      content: '\203A';
+      font-size: rem(22);
+      line-height: rem(16);
+      padding-left: rem(6);
+    }
+  }
+}

@@ -1,0 +1,13 @@
+.error {
+  display: flex;
+  margin: rem(32) 0;
+  flex-direction: column;
+  justify-content: center;
+  h1 {
+    margin-bottom: rem(24);
+  }
+  button {
+    margin-top: rem(24);
+    margin-right: auto;
+  }
+}

@@ -1,0 +1,40 @@
+.step-feedback {
+  display: flex;
+  flex-direction: column;
+  margin: 0 rem(-16);
+  padding: rem(32) rem(16);
+  border-bottom: 2px solid $c-step-buttons-border;
+  @include breakpoint(tablet) {
+    margin: 0;
+    padding: rem(32) 0;
+  }
+  &__title {
+    margin-bottom: rem(24);
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+      margin-bottom: rem(30);
+      margin-right: 0;
+    }
+    @include breakpoint(tablet) {
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: center;
+      img {
+        margin-right: rem(30);
+        margin-bottom: 0;
+      }
+    }
+    button {
+      margin-top: rem(24);
+      margin-left: auto;
+    }
+    img {
+      width: rem(70);
+      height: rem(70);
+    }
+  }
+}

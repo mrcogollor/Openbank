@@ -1,0 +1,65 @@
+{
+  "name": "openbank-test",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "ci": "^2.1.0",
+    "classnames": "^2.3.1",
+    "i18next": "^17.3.1",
+    "i18next-browser-languagedetector": "^3.1.1",
+    "i18next-xhr-backend": "^3.2.2",
+    "node-sass": "^4.14.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.14.0",
+    "react-app-polyfill": "^2.0.0",
+    "react-dom": "^16.14.0",
+    "react-hook-form": "^7.1.1",
+    "react-i18next": "^10.13.2",
+    "react-material-stepper": "^1.0.0",
+    "react-redux": "^7.2.3",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.1.1",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.3.0",
+    "web-vitals": "^1.1.1"
+  },
+  "scripts": {
+    "lint:js": "eslint 'src/components/**/*.js' && eslint 'src/pages/**/*.js'",
+    "lint:js:fix": "eslint 'src/components/**/*.js' --fix && eslint 'src/pages/**/*.js' --fix",
+    "lint:scss": "stylelint 'src/styles/**/*.scss' && stylelint 'src/styles/**/*.scss'",
+    "lint:scss:fix": "stylelint 'src/styles/**/*.scss' --fix && stylelint 'src/styles/**/*.scss' --fix",
+    "lint": "npm run lint:js && npm run lint:scss",
+    "lint:fix": "npm run lint:js:fix && npm run lint:scss:fix",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.2.5",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "eslint-config-prettier": "^8.2.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "prettier": "^2.2.1",
+    "stylelint": "^13.12.0",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-prettier": "^1.2.0"
+  }
+}

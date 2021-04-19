@@ -1,0 +1,46 @@
+.step-product-information {
+  &__images {
+    display: flex;
+    align-items: center;
+    margin: rem(40) rem(48) rem(32) rem(48);
+    justify-content: center;
+    flex-direction: column;
+    @include breakpoint(mobile) {
+      flex-direction: row;
+      align-items: baseline;
+    }
+  }
+  &__group-image {
+    display: flex;
+    flex: 1 1 100%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: rem(280);
+    &:first-child {
+      margin-bottom: rem(40);
+    }
+    @include breakpoint(tablet) {
+      width: spacing-grid(1, 6);
+      &:first-child {
+        margin-right: 5%;
+        margin-bottom: 0;
+      }
+      &:last-child {
+        margin-left: 5%;
+      }
+    }
+    img {
+      max-width: rem(160);
+    }
+    p {
+      margin-top: rem(16);
+    }
+  }
+  &__title {
+    font-weight: $f-bold;
+  }
+  p {
+    margin-bottom: rem(16);
+  }
+}

@@ -1,0 +1,54 @@
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+
+  font-size: 100%;
+}
+
+body {
+  font-family: $f-text, sans-serif;
+  color: $c-secondary-color;
+  font: rem(14) / rem(17) $f-text;
+}
+
+%t-h1,
+.t-h1 {
+  font: $f-semi-bold rem(24) / rem(30) $f-text;
+  @include breakpoint(desktop) {
+    font-size: rem(32);
+    line-height: rem(32);
+  }
+}
+
+%t-h2,
+.t-h2 {
+  font: $f-bold rem(22) / rem(30) $f-text;
+  @include breakpoint(desktop) {
+    font-size: rem(24);
+    line-height: rem(30);
+  }
+}
+
+%t-button,
+.t-button {
+  font: $f-bold rem(14) / rem(18) $f-text;
+}
+
+%t-label,
+.t-label {
+  font-weight: $f-bold;
+}
+
+p {
+  font: $f-medium rem(14) / rem(16) $f-text;
+}
+
+a {
+  color: $c-primary-color;
+  cursor: pointer;
+  display: contents;
+}

@@ -1,0 +1,35 @@
+.button {
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  width: 100%;
+  border-radius: rem(3);
+  @include breakpoint(tablet) {
+    width: auto;
+  }
+
+  &--primary {
+    padding: rem(16) rem(24);
+    background: $c-secondary-color;
+    color: $c-white;
+
+    // &:hover {
+    //   background: $c-primary-dark;
+    // }
+  }
+
+  &--link {
+    color: $c-primary-color;
+    &:after {
+      content: '\203A';
+      font-size: rem(22);
+      line-height: rem(16);
+      padding-left: rem(6);
+    }
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}

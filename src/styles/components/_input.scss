@@ -1,0 +1,15 @@
+input[type='text'],
+input[type='password'] {
+  border: 1px solid $c-border-input;
+  color: $c-secondary-color;
+  padding: rem(16);
+  width: 100%;
+  &::-webkit-input-placeholder {
+    font-size: rem(16);
+  }
+  &::placeholder {
+    font-size: rem(16);
+    line-height: rem(16);
+    font-family: $f-text;
+  }
+}
