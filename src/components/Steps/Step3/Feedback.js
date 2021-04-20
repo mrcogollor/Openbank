@@ -50,7 +50,7 @@ const FeedbackStep = (props) => {
                 <div>
                   <h2 className="t-h2 step-feedback__title">{t('steps.step3.titleSuccess')}</h2>
                   <p>{t('steps.step3.subtitleSuccess')}</p>
-                  <Button text={t('steps.step3.ctaSuccess')} link onClick={console.log('Acceder')} />
+                  <Button text={t('steps.step3.ctaSuccess')} link onClick={resetApp} />
                 </div>
               </div>
             );
