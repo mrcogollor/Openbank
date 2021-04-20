@@ -20,6 +20,7 @@
     font-size: rem(14);
     width: rem(24);
     height: rem(24);
+    pointer-events: none;
     &--active {
       background: $c-step-active;
       width: rem(36);
